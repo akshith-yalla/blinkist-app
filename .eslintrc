@@ -1,0 +1,17 @@
+{  
+    "extends": "eslint-config-zemoso",  
+    "parser": "babel-eslint",  
+    "env": 
+      {    
+        "node": true,    
+        "es6": true,    
+        "browser": true  
+      },  
+    "rules": 
+      {    
+        "implicit-arrow-linebreak": "off",    
+        "comma-dangle": "off",    
+        "indent": "off",    
+        "no-trailing-spaces": "off"  
+      }
+    }
