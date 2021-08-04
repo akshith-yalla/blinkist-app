@@ -7,11 +7,8 @@ const ButtonComponent = (props) => {
 
  return (
   <Button
-  variant="contained"
-  color="primary"
   disabled={disabled}
   onClick={onClick}
-  size="medium" 
   >
     {title}
   </Button>

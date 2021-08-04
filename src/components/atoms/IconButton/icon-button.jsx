@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import IconButton from "@material-ui/core/IconButton";
 
 const IconButtonComponent = (props) => {
-    const { icon, disabled, onClick } = props;
+    const { icon, disabled, onClick, color } = props;
     return(
-        <IconButton color="primary" disabled={disabled} onClick={onClick}>
+        <IconButton color={color} disabled={disabled} onClick={onClick}>
             {icon}
         </IconButton>
     );
@@ -14,6 +14,7 @@ const IconButtonComponent = (props) => {
 
 IconButtonComponent.propTypes = {
   icon: PropTypes.element.isRequired,
+  color: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
 };

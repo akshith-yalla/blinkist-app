@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 const getMappedVariant = (variant) => {
   switch (variant) {
     case "header":
-      return "h4";
+      return "h6";
     case "title":
       return "subtitle1";
     case "subtitle":
@@ -17,22 +17,24 @@ const getMappedVariant = (variant) => {
 };
 
 const TypographyComponent = (props) =>{ 
-  const { variant, children } = props;
+  const { variant, children, color } = props;
 
   return(
-  <Typography variant={getMappedVariant(variant)}>
+  <Typography color={color} variant={getMappedVariant(variant)}>
     {children}
   </Typography>
 );};
 
 TypographyComponent.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any,
   variant: PropTypes.string.isRequired,
+  color: PropTypes.string
 };
 
 TypographyComponent.defaultProps = {
     children: 'body1',
     variant: "body",
+    color: "textSecondary"
 };
 
 export default TypographyComponent;

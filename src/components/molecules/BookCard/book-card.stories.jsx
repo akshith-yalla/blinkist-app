@@ -1,5 +1,6 @@
 import React from 'react';
 import BookCard from './book-card';
+import book from '../../../assets/images/book.png';
 
 const BookCardComponent = {
     title: 'MOLECULES/BookCard',
@@ -7,16 +8,16 @@ const BookCardComponent = {
 };
 
 const Template = (args) => (
-    <BookCard {...args}></BookCard>
+    <BookCard {...args} />
 );
 export const DemoBookCard =  Template.bind({});
 DemoBookCard.args = {
-    name: 'StephenFrost, Raafi-Karim', 
+    name: 'StephenFrost, Raafi-Karim ...', 
     time: '15-min',
     reads: '17.1k',
     thumbnail: 'Building an Inclusive Organization',
     alt : 'Book Name',
-    imgSrc : '/src/assets/images/book.png'
+    imgSrc : book
 };
 
 
