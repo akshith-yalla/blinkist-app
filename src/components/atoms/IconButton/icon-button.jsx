@@ -12,15 +12,4 @@ const IconButtonComponent = (props) => {
     );
 };
 
-IconButtonComponent.propTypes = {
-  icon: PropTypes.element.isRequired,
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-};
-
-IconButtonComponent.defaultProps = {
-  disable: false,
-};
-
 export default IconButtonComponent;

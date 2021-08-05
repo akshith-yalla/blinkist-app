@@ -20,21 +20,9 @@ const TypographyComponent = (props) =>{
   const { variant, children, color } = props;
 
   return(
-  <Typography color={color} variant={getMappedVariant(variant)}>
+  <Typography variant={getMappedVariant(variant)} noWrap>
     {children}
   </Typography>
 );};
-
-TypographyComponent.propTypes = {
-  children: PropTypes.any,
-  variant: PropTypes.string.isRequired,
-  color: PropTypes.string
-};
-
-TypographyComponent.defaultProps = {
-    children: 'body1',
-    variant: "body",
-    color: "textSecondary"
-};
 
 export default TypographyComponent;

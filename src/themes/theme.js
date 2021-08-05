@@ -1,6 +1,7 @@
 import { createTheme, responsiveFontSizes } from "@material-ui/core/styles";
 
 import { grey, cyan, orange } from "@material-ui/core/colors";
+import { COLORS } from '../constants';
 
 const defaultTheme = createTheme();
 
@@ -36,7 +37,16 @@ const baseTheme = createTheme({
   },
   typography: {
     fontSize: 12,
+    fontFamily: "Raleway, sans-serif"
   },
+  overrides: {
+		MuiButton: {
+			root: {	
+				border: "1px solid" + COLORS.ALPHA_PRIMARY_500
+			}
+		}
+	}
+
 });
 
 const responsiveFontTheme = responsiveFontSizes(baseTheme);

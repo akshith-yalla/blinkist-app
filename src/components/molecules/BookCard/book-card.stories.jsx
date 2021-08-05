@@ -12,12 +12,15 @@ const Template = (args) => (
 );
 export const DemoBookCard =  Template.bind({});
 DemoBookCard.args = {
-    name: 'StephenFrost, Raafi-Karim ...', 
-    time: '15-min',
-    reads: '17.1k',
-    thumbnail: 'Building an Inclusive Organization',
-    alt : 'Book Name',
-    imgSrc : book
+    book:{
+        author: 'StephenFrost, Raafi-Karim ...', 
+        readTime: '15-min',
+        readCount: '17.1k',
+        name: 'Building an Inclusive Organization',
+        imgAlt : 'Book Name',
+        imgSrc : "https://images.blinkist.io/images/books/608bc8bb6cee070008a8f57e/1_1/470.jpg"
+    },
+    btnText: "Currently reading"
 };
 
 

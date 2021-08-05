@@ -1,6 +1,8 @@
 import React from 'react';
 import Typography from './typography';
+import baseTheme from '../../../themes/theme';
 
+import { ThemeProvider } from "@material-ui/core/styles";
 
 const TypographyComponent = {
   title: "ATOMS/Typography",
@@ -8,7 +10,9 @@ const TypographyComponent = {
 };
 
 const Template = ({ children, ...args }) => (
+  <ThemeProvider theme={baseTheme}>
     <Typography {...args}>{children}</Typography>
+  </ThemeProvider>
 );
 
 export const Header = Template.bind({});
