@@ -16,33 +16,14 @@ const baseTheme = createTheme({
       padding: defaultTheme.spacing(2),
     },
   },
-  palette: {
-    type: "dark",
-    primary: {
-      main: cyan[200],
-    },
-    secondary: {
-      main: orange[500],
-    },
-    containerPrimary: {
-      main: cyan[200],
-      light: "#b4ffff",
-      dark: "#4bacb8",
-    },
-    containerSecondary: {
-      main: grey[400],
-      light: "#f5f5f5",
-      dark: "#373737",
-    },
-  },
   typography: {
-    fontSize: 12,
     fontFamily: "Raleway, sans-serif"
+
   },
   overrides: {
-		MuiButton: {
+    MuiTypography: {
 			root: {	
-				border: "1px solid" + COLORS.ALPHA_PRIMARY_500
+        fontFamily: "Raleway, sans-serif"
 			}
 		}
 	}

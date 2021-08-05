@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import Typography from "@material-ui/core/Typography";
 
@@ -17,7 +16,7 @@ const getMappedVariant = (variant) => {
 };
 
 const TypographyComponent = (props) =>{ 
-  const { variant, children, color } = props;
+  const { variant, children } = props;
 
   return(
   <Typography variant={getMappedVariant(variant)} noWrap>

@@ -28,9 +28,6 @@ const BookStatusEvent = () => {
         return (<Box className={styles.bookButton}><Button onClick={onStatusChange} title={bookState} /></Box>);
 };
 
-BookStatusEvent.propTypes = {};
-BookStatusEvent.defaultProps = {};
-
 export default BookStatusEvent;
 
 

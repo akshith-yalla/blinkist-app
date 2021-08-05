@@ -1,18 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { ThemeProvider } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent,CardMedia, CardActions,Grid } from '@material-ui/core';
-import Typography from '../../atoms/Typography/typography';
+import { Card, CardContent,CardMedia, Typography,Grid } from '@material-ui/core';
 import { AccessTime, PersonOutline, MoreHoriz } from '@material-ui/icons';
-import Button from '../../atoms/Button/button';
+import baseTheme from '../../../themes/theme';
 
 
 const useStyles = makeStyles((theme) => ({
   root:{
-    maxWidth: 325
+    maxWidth: 300
   },
   media: {
-    height: 0,
     padding: "50%"
   },
 
@@ -24,34 +22,33 @@ const BookCardComponent = (props) => {
     const styles = useStyles();
     const { book, btnText } = props;
     return (
-      <Card className={styles.root} variant="outlined">
-        <CardMedia
-          className={styles.media}
-          image={book.imgSrc}
-          title={book.name}
-          alt = {book.imgAlt}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h4" component="h2">
-              {book.name}
-          </Typography>
-          <Typography variant="subtitle">
-         {book.author}
-          </Typography>
-          <br/>
-          <Grid container justifyContent="space-between">
-            <Grid item><AccessTime style={{marginTop: -5}} />{book.readTime}</Grid>
-            <Grid item><PersonOutline style={{marginTop: -5}} />{book.readCount}</Grid>
-          </Grid>
+      <ThemeProvider theme = {baseTheme}>
+        <Card className={styles.root} variant="outlined">
+          <CardMedia
+            className={styles.media}
+            image={book.imgSrc}
+            title={book.name}
+            alt = {book.imgAlt}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="subtitle1">
+                {book.name}
+            </Typography>
+            <Typography variant="subtitle1">
+          {book.author}
+            </Typography>
+            <br/>
+            <Grid container justifyContent="space-between">
+              <Grid item><AccessTime style={{marginTop: -5}} />{book.readTime}</Grid>
+              <Grid item><PersonOutline style={{marginTop: -5}} />{book.readCount}</Grid>
+            </Grid>
 
-        </CardContent>
-        <Grid container justifyContent="space-between">
-          <CardActions>
-            <Button variant="contained" color="primary" title={btnText} />
-          </CardActions>
-          <Grid item ><MoreHoriz /></Grid>
-        </Grid>
-      </Card>   
+          </CardContent>
+          <Grid container justifyContent="flex-end">
+            <Grid item ><MoreHoriz /></Grid>
+          </Grid>
+        </Card>   
+      </ThemeProvider>
       );
     
   };
