@@ -3,9 +3,7 @@ import BookStatusEvent from './book-status';
 
 const BookStatusEventComponent = {
     title : "ORGANISMS/BookStatusEvent",
-    component: BookStatusEvent,
-    argTypes: { onBookStatusChange: { action: "status changed" } },
-
+    component: BookStatusEvent
 };
 
 const Template = (args) => {
@@ -14,7 +12,7 @@ const Template = (args) => {
 
 export const DemoData = Template.bind({});
 DemoData.args = {
-    bookState: 'Continue Reading'
+    bookStatus: 'Continue Reading'
 };
 
 export default BookStatusEventComponent;

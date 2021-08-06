@@ -1,0 +1,79 @@
+{
+    "book1":{
+        "imgSrc" : "../images/Book1.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+    },
+    "book2":{
+        "imgSrc" : "./images/Book2.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+    },
+    "book3":{
+        "imgSrc" : "./images/Book3.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+
+    },
+    "book4":{
+        "imgSrc" : "./images/Book4.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+
+    },
+    "book5":{
+        "imgSrc" : "./images/Book5.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+
+    },
+    "book6":{
+        "imgSrc" : "./images/Book6.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+
+    },
+    "book7":{
+        "imgSrc" : "./images/Book4.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+    },
+    "book8":{
+        "imgSrc" : "./images/Book3.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+
+    },
+    "book9":{
+        "imgSrc" : "./images/Book2.png",
+        "imgAlt" : "Bring Your Human to Work",
+        "name": "Bring Your Human to Work",
+        "author": "Erica Keswin", 
+        "readTime": "13-minute read",
+        "readCount": "17.1k"
+    }
+}

@@ -1,17 +1,25 @@
 import React from 'react';
-import { ThemeProvider } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent,CardMedia, Typography,Grid } from '@material-ui/core';
+import { Card, CardContent,CardActions, Typography,Grid,ThemeProvider } from '@material-ui/core';
 import { AccessTime, PersonOutline, MoreHoriz } from '@material-ui/icons';
 import baseTheme from '../../../themes/theme';
+import BookStatusEvent from '../../organisms/BookStatusEvent/book-status';
 
 
 const useStyles = makeStyles((theme) => ({
   root:{
-    maxWidth: 300
+    width: "18rem",
+    borderRadius: "3%",
+    borderBottomRightRadius: "2%",
+    borderBottomLeftRadius: "2%",
+    display: "grid",
+    background:"rgb(250,250,250)",
   },
   media: {
-    padding: "50%"
+    width: "inherit",
+    borderRadius: "inherit",
+    borderBottomRightRadius: "unset",
+    borderBottomLeftRadius: "unset"
   },
 
 }));
@@ -24,9 +32,9 @@ const BookCardComponent = (props) => {
     return (
       <ThemeProvider theme = {baseTheme}>
         <Card className={styles.root} variant="outlined">
-          <CardMedia
+          <img
             className={styles.media}
-            image={book.imgSrc}
+            src={book.imgSrc}
             title={book.name}
             alt = {book.imgAlt}
           />
@@ -34,19 +42,21 @@ const BookCardComponent = (props) => {
             <Typography gutterBottom variant="subtitle1">
                 {book.name}
             </Typography>
-            <Typography variant="subtitle1">
-          {book.author}
+            <Typography variant="subtitle2">
+              {book.author}
             </Typography>
             <br/>
             <Grid container justifyContent="space-between">
-              <Grid item><AccessTime style={{marginTop: -5}} />{book.readTime}</Grid>
-              <Grid item><PersonOutline style={{marginTop: -5}} />{book.readCount}</Grid>
+              <Grid item><AccessTime fontSize="small"  style={{marginTop: -2}} />{book.readTime}</Grid>
+              <Grid item><PersonOutline fontSize="small"  style={{marginTop: -2}} />{book.readCount}</Grid>
             </Grid>
 
           </CardContent>
-          <Grid container justifyContent="flex-end">
-            <Grid item ><MoreHoriz /></Grid>
+          <Grid container justifyContent="space-between">
+          <Grid item ><CardActions><BookStatusEvent /></CardActions></Grid>
+            <Grid item ><MoreHoriz fontSize="small" style={{margin: "1rem"}} /></Grid>
           </Grid>
+
         </Card>   
       </ThemeProvider>
       );

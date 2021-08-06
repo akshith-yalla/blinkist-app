@@ -5,7 +5,7 @@ const ButtonComponent = (props) => {
   const   {onClick, title} = props;
 
   return (
-    <Button variant="contained" color="primary" onClick={onClick}>
+    <Button variant="contained" onClick={onClick}>
       {title}
     </Button>
   );

@@ -1,16 +1,17 @@
 import React from 'react';
 import Header from '../../molecules/Header/header';
 import BookCard from '../../molecules/BookCard/book-card';
-import { makeStyles, Box, Grid, Paper, Container, Typography, ThemeProvider, Button } from '@material-ui/core';
+import { makeStyles, Box, Grid, Paper, Container, Typography, ThemeProvider, Button, Card, CardContent } from '@material-ui/core';
 import baseTheme from '../../../themes/theme';
-import store_icons from '../../../assets/images/store_icons.jpg';
+import AddBook from '../../organisms/AddBook/add-book';
+import Notification from '../../molecules/Notification/notification';
 
 const useStyles = makeStyles((theme)=>({
     root: {
         flexGrow: 1,
       },
     header: {
-        marginBottom: '8rem'
+        marginBottom: '4rem'
     },
     paperTitle:{
         color: "red"
@@ -22,7 +23,6 @@ const useStyles = makeStyles((theme)=>({
         textAlign:"center",
         '& > *': {
           backgroundColor: "#ecf2fb",
-          margin: theme.spacing(1),
           padding: theme.spacing(1),
           height: theme.spacing(16),
           width: "fit-content"
@@ -36,64 +36,49 @@ const useStyles = makeStyles((theme)=>({
 
 const MyLibraryComponent = (props)=>{
     const styles = useStyles();
-    const {logo, logoAlt, title1, title2, title3, title4 } = props;
+    const {logo, logoAlt, title1, title2, title3, title4, book1, book2, book3, book4, book5, book6, book7, book8, book9} = props;
     return(   
         <ThemeProvider theme = {baseTheme}> 
-        <Container>
+        <Container maxWidth="md">
             <Box className={styles.header} >
                 <Header logo = {logo} logoAlt={logoAlt} title1={title1} title2={title2} title3={title3} title4={title4} />
             </Box>
-            <Typography variant="h3"> My Library</Typography>
+            <Typography variant="h4"> My Library</Typography>
             <br/>
-            <div className={styles.paper}>
-                <Paper variant="outlined" >
-                    <Grid container>
-                        <Grid item xs={6} md={6}>
-                                <Typography variant="subtitle1" className={styles.paperTitle} align="left"  >New </Typography>
-                                <Typography variant="subtitle1"  className={styles.paperSubtitle}  align="left" >Find audiobooks on the blinkist app</Typography>
-                                <Typography variant="subtitle1" align="left"    >
-                                        With the premium you'll get the whole Blinkist library for free, plus full-length nonfiction audiobooks at a special member price.
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={6} md={6}>
-                                    <img src={store_icons} height="125" width="150" />
-                            </Grid>
-                    </Grid>
-                </Paper>
-            </div>
+            <Notification />
             <br/>
             <Grid container spacing={2}>
-                <Grid container item xs={12} spacing={1}>
+                <Grid container item xs={12} spacing={4}>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book1} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book2} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book3} />
                     </Grid>       
                 </Grid>
-                <Grid container item xs={12} spacing={1}>
+                <Grid container item xs={12} spacing={4}>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book4} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book5} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book6} />
                     </Grid>       
                 </Grid>
-                <Grid container item xs={12} spacing={1}>
+                <Grid container item xs={12} spacing={4}>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book7} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book8} />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BookCard {...props} />
+                        <BookCard book={book9} />
                     </Grid>       
                 </Grid>
             </Grid>

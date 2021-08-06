@@ -1,32 +1,20 @@
 import { createTheme, responsiveFontSizes } from "@material-ui/core/styles";
 
-import { grey, cyan, orange } from "@material-ui/core/colors";
 import { COLORS } from '../constants';
 
 const defaultTheme = createTheme();
 
 const baseTheme = createTheme({
-  container: {
-    primary: {
-      borderRadius: defaultTheme.spacing(1),
-      padding: defaultTheme.spacing(2),
-    },
-    secondary: {
-      borderRadius: defaultTheme.spacing(1),
-      padding: defaultTheme.spacing(2),
-    },
+  pallete:{
+    primary:COLORS.ALPHA_PRIMARY_700
   },
   typography: {
-    fontFamily: "Raleway, sans-serif"
-
+    fontFamily: "Raleway, sans-serif",
+    color: "black",
+    subtitle1:{
+      fontWeight:"bold"
+    }
   },
-  overrides: {
-    MuiTypography: {
-			root: {	
-        fontFamily: "Raleway, sans-serif"
-			}
-		}
-	}
 
 });
 

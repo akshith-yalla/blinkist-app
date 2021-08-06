@@ -1,9 +1,12 @@
 import React from 'react';
-import Typography from '../../atoms/Typography/typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Toolbar, AppBar, Box, Link } from '@material-ui/core';
+import { Toolbar, AppBar, Box, Link , Typography, Dialog, DialogActions, DialogContent, Button} from '@material-ui/core';
 import IconButton from '../../atoms/IconButton/icon-button';
 import SearchIcon from '@material-ui/icons/Search';
+import AccountMenu from '../../organisms/AccountMenu/account-menu';
+import AddBook from '../../organisms/AddBook/add-book';
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -11,10 +14,11 @@ const useStyles = makeStyles((theme) => ({
     },
     header: {
         backgroundColor: "white",
+        boxShadow: "none"
     },
     navItems:{
-        marginLeft: "16rem",
-        marginRight: "16rem"
+        marginLeft: "19rem",
+        marginRight: "19rem"
     },
     searchIcon: {
       marginRight: "2rem",
@@ -38,18 +42,41 @@ const useStyles = makeStyles((theme) => ({
 const HeaderComponent = (props)=>{
     const classes = useStyles();
     const { logo, logoAlt, title1, title2, title3, title4 } = props;
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
 
     return(
+        <header>
           <AppBar className={classes.header} position="fixed" >
             <Toolbar className={classes.navItems} >
             <img className={classes.image} src={logo} alt={logoAlt} />
-            <Box className={classes.searchIcon}><IconButton icon={<SearchIcon />} /></Box>
-              <Box className={classes.title}><Typography variant="title" ><Link href="#">{title1}</Link></Typography></Box>
-              <Box className={classes.title}><Typography variant="title" ><Link href="#">{title2}</Link></Typography></Box>
-              <Box className={classes.title}><Typography variant="title" ><Link href="#">{title3}</Link></Typography></Box>
-              <Box className={classes.account}><Typography variant="title" ><Link href="#">{title4}</Link></Typography></Box>
+            <Box className={classes.searchIcon}><IconButton icon={<SearchIcon fontSize="large" />} /></Box>
+              <Box className={classes.title}><Typography variant="subtitle2" ><Link href="#">{title1}</Link></Typography></Box>
+              <Box className={classes.title}><Typography variant="subtitle2" ><Link href="#">{title2}</Link></Typography></Box>
+              <Box className={classes.title}><Typography variant="subtitle2" ><Link onClick={handleClickOpen} href="#">{title3}</Link></Typography></Box>
+              <Box className={classes.account}><AccountMenu /></Box>
             </Toolbar>
           </AppBar>
+          <div>
+            <Dialog open={open} onClose={handleClose}  aria-labelledby="form-dialog-title">
+              <DialogContent>
+                <AddBook />
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                  Cancel
+                </Button>
+              </DialogActions>
+            </Dialog>
+          </div>
+        </header>
     );
 
 
