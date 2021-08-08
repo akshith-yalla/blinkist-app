@@ -43,7 +43,7 @@ const Notification = () => {
             </Grid>
         </Paper>
     </div>
-    )
+    );
 };
 
 

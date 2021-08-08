@@ -1,6 +1,26 @@
 import React from 'react';
  
-const App = ({ title }) =>
-  <div>{title}</div>;
- 
-export default App;
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import AddBook from './components/organisms/AddBook/add-book';
+import MyLibraryPage from './pages/MyLibrary/my-library';
+
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/addBook">
+            <AddBook />
+          </Route>
+          <Route path="/">
+            <MyLibraryPage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}

@@ -9,7 +9,15 @@ module.exports = {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ['babel-loader', "eslint-loader"]
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i, 
+          loader: 'file-loader',
+          options: {
+            name: 'assets/images/[name].[ext]'
+          }
         }
+        
       ]
     },
     resolve: {

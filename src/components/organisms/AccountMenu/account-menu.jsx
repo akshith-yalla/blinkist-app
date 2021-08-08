@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import { Link }  from '@material-ui/core';
+import { Link,IconButton }  from '@material-ui/core';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -17,8 +17,8 @@ const AccountMenu = () => {
 
   return (
     <div>
-      <Link aria-controls="account-menu" aria-haspopup="true" onClick={handleClick}>
-        Account<ExpandMoreIcon fontSize="small" />
+      <Link color="textPrimary" aria-controls="account-menu" aria-haspopup="true" onClick={handleClick}>
+        Account<IconButton><ExpandMoreIcon  /></IconButton>
       </Link>
       <Menu
         id="account-menu"
@@ -44,7 +44,7 @@ const AccountMenu = () => {
       </Menu>
     </div>
   );
-}
+};
 
 
 export default AccountMenu;

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { makeStyles, Grid, Card, CardContent, CardHeader,TextField, ThemeProvider } from '@material-ui/core';
 import Button from '../../atoms/Button/button';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme)=>({
     root:{
@@ -22,18 +23,24 @@ const AddBook = (props) => {
             readCount:"",
             readTime:"",
             imageUrl:""
-    })
+    });
     const handleChange =(e)=>{
-        const data = formData
+        const data = formData;
         const inputData = {...data};
         inputData[e.target.id] = e.target.value;
         setFormData(inputData);
     };
 
-    const addBook =()=>{
-        console.log('book details submitted', formData)
-        setFormData(prevState=>(prevState))
-        alert('Book details added successfully')
+    const addBook =(e)=>{
+        e.preventDefault();
+        const bookData = formData;
+        axios.post(`https://jsonplaceholder.typicode.com/users`, { bookData })
+        .then(res => {
+            console.log(res);
+            console.log(res.data, res.status);
+        });
+        console.log('book details submitted', formData);
+        alert('Book details added successfully');
     };
 
     return (
@@ -48,12 +55,12 @@ const AddBook = (props) => {
                                     <TextField className={styles.root}  type="text" fullWidth id="readCount" placeholder="Enter Read Count" variant="outlined" label="Read Count" onChange={(e)=>handleChange(e)} />
                                     <TextField className={styles.root}  type="text" fullWidth id="readTime" placeholder="Enter Read Time" variant="outlined" label="Read Time" onChange={(e)=>handleChange(e)} />
                                     <TextField className={styles.root}  type="text" fullWidth id="imageUrl" placeholder="Enter Book Image Url" variant="outlined" label="Book Image Url" onChange={(e)=>handleChange(e)} />
-                                    <div className={styles.btn}><Button type="submit" color="primary" variant="contained" onClick={addBook} title="Add Book" /></div>
+                                    <div className={styles.btn}><Button type="submit" color="primary" onClick={(e)=>addBook(e)} variant="contained" title="Add Book" /></div>
                                 </form>
                         </CardContent>
                     </Card>
             </Grid>
-    )
-}
+    );
+};
 
 export default AddBook;

@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent,CardActions, Typography,Grid,ThemeProvider } from '@material-ui/core';
 import { AccessTime, PersonOutline, MoreHoriz } from '@material-ui/icons';
 import baseTheme from '../../../themes/theme';
-import BookStatusEvent from '../../organisms/BookStatusEvent/book-status';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: "2%",
     display: "grid",
     background:"rgb(250,250,250)",
+    boxShadow:" 3px 3px 10px rgb(0 0 0 / 50%)"
   },
   media: {
     width: "inherit",
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 const BookCardComponent = (props) => {
   
     const styles = useStyles();
-    const { book, btnText } = props;
+    const { book, bookButton } = props;
     return (
       <ThemeProvider theme = {baseTheme}>
         <Card className={styles.root} variant="outlined">
@@ -53,7 +53,7 @@ const BookCardComponent = (props) => {
 
           </CardContent>
           <Grid container justifyContent="space-between">
-          <Grid item ><CardActions><BookStatusEvent /></CardActions></Grid>
+          <Grid item ><CardActions>{bookButton}</CardActions></Grid>
             <Grid item ><MoreHoriz fontSize="small" style={{margin: "1rem"}} /></Grid>
           </Grid>
 
