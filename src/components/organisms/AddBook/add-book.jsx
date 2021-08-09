@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { makeStyles, Grid, Card, CardContent, CardHeader,TextField, ThemeProvider } from '@material-ui/core';
 import Button from '../../atoms/Button/button';
-import axios from 'axios';
+import API from '../../../api';
+import { body, contentType } from 'min-document';
 
 const useStyles = makeStyles((theme)=>({
     root:{
@@ -22,7 +23,7 @@ const AddBook = (props) => {
             category:"",
             readCount:"",
             readTime:"",
-            imageUrl:""
+            imgSrc:""
     });
     const handleChange =(e)=>{
         const data = formData;
@@ -34,7 +35,7 @@ const AddBook = (props) => {
     const addBook =(e)=>{
         e.preventDefault();
         const bookData = formData;
-        axios.post(`https://jsonplaceholder.typicode.com/users`, { bookData })
+        API.post(`/myLibrary`,bookData)
         .then(res => {
             console.log(res);
             console.log(res.data, res.status);
@@ -54,7 +55,7 @@ const AddBook = (props) => {
                                     <TextField className={styles.root}  type="text" fullWidth id="category" placeholder="Enter Book Category" variant="outlined" label="Book Category" onChange={(e)=>handleChange(e)} />
                                     <TextField className={styles.root}  type="text" fullWidth id="readCount" placeholder="Enter Read Count" variant="outlined" label="Read Count" onChange={(e)=>handleChange(e)} />
                                     <TextField className={styles.root}  type="text" fullWidth id="readTime" placeholder="Enter Read Time" variant="outlined" label="Read Time" onChange={(e)=>handleChange(e)} />
-                                    <TextField className={styles.root}  type="text" fullWidth id="imageUrl" placeholder="Enter Book Image Url" variant="outlined" label="Book Image Url" onChange={(e)=>handleChange(e)} />
+                                    <TextField className={styles.root}  type="text" fullWidth id="imgSrc" placeholder="Enter Book Image Url" variant="outlined" label="Book Image Url" onChange={(e)=>handleChange(e)} />
                                     <div className={styles.btn}><Button type="submit" color="primary" onClick={(e)=>addBook(e)} variant="contained" title="Add Book" /></div>
                                 </form>
                         </CardContent>

@@ -3,7 +3,7 @@ import Header from './header';
 import logo from '../../../assets/images/blinkist_logo.png';
 
 const HeaderComponent = {
-    title: 'MOLECULES/Header',
+    title: 'ORGANISMS/Header',
     component: Header
 };
 

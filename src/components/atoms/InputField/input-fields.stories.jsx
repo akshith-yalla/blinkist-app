@@ -33,36 +33,6 @@ RequiredTextField.args = {
   required: true,
 };
 
-export const PasswordTextField = Template.bind({});
-PasswordTextField.args = {
-  label: "Password Type",
-  type: "password",
-};
-
-export const EmailTextField = Template.bind({});
-EmailTextField.args = {
-  label: "Email Type",
-  type: "email",
-};
-
-export const DateTextField = Template.bind({});
-DateTextField.args = {
-  label: "Date Type",
-  type: "date",
-};
-
-export const TimeTextField = Template.bind({});
-TimeTextField.args = {
-  label: "Time Type",
-  type: "time",
-};
-
-export const DateTimeTextField = Template.bind({});
-DateTimeTextField.args = {
-  label: "Date Time Type",
-  type: "datetime-local",
-};
-
 export const EmptyErrorTextField = Template.bind({});
 EmptyErrorTextField.args = {
   label: "Empty Error Label",

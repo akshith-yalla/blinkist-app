@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme)=>({
       }
 }));
 
-const MyLibraryBookEvent = (props) => {
+const MyLibraryData = (props) => {
     const {bookStatus} = props;
     const styles = useStyles();
     const [bookState, setBookState] = useState('Currently Reading');
@@ -51,4 +51,4 @@ const MyLibraryBookEvent = (props) => {
         );
 };
 
-export default MyLibraryBookEvent;
+export default MyLibraryData;

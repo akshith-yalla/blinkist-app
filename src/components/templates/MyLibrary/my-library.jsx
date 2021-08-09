@@ -1,9 +1,6 @@
 import React from 'react';
-import Header from '../../molecules/Header/header';
-import BookCard from '../../molecules/BookCard/book-card';
-import { makeStyles, Box, Grid, Paper, Container, Typography, ThemeProvider, Button, Card, CardContent } from '@material-ui/core';
+import { makeStyles, Box, Grid, Container, Typography, ThemeProvider, Button } from '@material-ui/core';
 import baseTheme from '../../../themes/theme';
-import AddBook from '../../organisms/AddBook/add-book';
 import Notification from '../../molecules/Notification/notification';
 
 const useStyles = makeStyles((theme)=>({
@@ -34,6 +31,34 @@ const useStyles = makeStyles((theme)=>({
     heading:{
         marginBottom: "2rem",
         marginTop: "6rem"
+    },
+    middleContainer:{
+        maxWidth: "59rem",
+        margin: "0 auto"
+    },
+    libraryTabs:{
+        position: "relative",
+        zIndex: 1,
+        overflow: "visible"
+    },
+    tabs:{
+        display:"flex",
+        boxSizing: "border-box",
+        flexDirection: "row",
+        flex: "0 1 auto",
+        padding:"3rem 0"
+    },
+    tabNames:{
+        display:"flex",
+        borderBottom: "0.125rem solid #BAC8CE",
+        paddingBottom: "0.5rem",
+        flexBasis: "100%",
+        cursor: "pointer",
+        flexDirection: "column"
+    },
+    tabActive:{
+        color:"#22C870",
+        borderBottom: "0.125rem solid #22C870"
     }
 
 }));
@@ -47,10 +72,19 @@ const MyLibraryComponent = (props)=>{
             <Box className={styles.header} >
                 {header}
             </Box>
-            <Typography className={styles.heading} variant="h4"> My Library</Typography>
+            <Typography className={styles.heading} variant="h4">My Library</Typography>
             <br/>
             <Notification />
             <br/>
+            <div className={styles.middleConatiner}>
+                <div className={styles.libraryTabs}>
+                    <div className={styles.tabs}>
+                        <Typography className={`${styles.tabNames} ${styles.tabActive}`} variant="subtitle1">Currently reading</Typography>
+                        <Typography className={styles.tabNames} variant="subtitle1">Finished</Typography>
+                    </div>
+
+                </div>
+            </div>
             <Grid container spacing={2}>
                 <Grid container item xs={12} spacing={4}>
                     {mainContent}

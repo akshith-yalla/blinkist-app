@@ -13,9 +13,8 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: "2%",
     display: "grid",
     background:"rgb(250,250,250)",
-    boxShadow:" 3px 3px 10px rgb(0 0 0 / 50%)"
   },
-  media: {
+  image: {
     width: "inherit",
     borderRadius: "inherit",
     borderBottomRightRadius: "unset",
@@ -33,7 +32,7 @@ const BookCardComponent = (props) => {
       <ThemeProvider theme = {baseTheme}>
         <Card className={styles.root} variant="outlined">
           <img
-            className={styles.media}
+            className={styles.image}
             src={book.imgSrc}
             title={book.name}
             alt = {book.imgAlt}

@@ -9,7 +9,7 @@ const baseTheme = createTheme({
     primary:COLORS.ALPHA_PRIMARY_700
   },
   typography: {
-    fontFamily: "Raleway, sans-serif",
+    fontFamily: "CeraPRO, sans-serif",
     color: "black",
     subtitle1:{
       fontWeight:"bold"
