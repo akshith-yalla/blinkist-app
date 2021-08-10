@@ -1,5 +1,5 @@
 import React from "react";
-import InputField from "./input-fields";
+import InputField from ".";
 
 import { ThemeProvider } from "@material-ui/core/styles";
 import baseTheme from "../../../themes/theme";

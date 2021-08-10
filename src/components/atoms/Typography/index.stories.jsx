@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from './typography';
+import Typography from '.';
 import baseTheme from '../../../themes/theme';
 
 import { ThemeProvider } from "@material-ui/core/styles";

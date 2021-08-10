@@ -1,5 +1,5 @@
 import React from "react";
-import IconButton from "./icon-button";
+import IconButton from ".";
 
 import { ThemeProvider } from "@material-ui/core/styles";
 import baseTheme from "../../../themes/theme";

@@ -1,8 +1,8 @@
 import React from 'react';
-import MyLibrary from './my-library';
-import MyLibraryData from '../../organisms/MyLibrary/my-library';
-import Header from '../../organisms/Header/header';
-import Footer from '../../molecules/Footer/footer';
+import MyLibrary from '.';
+import MyLibraryData from '../../organisms/MyLibrary';
+import Header from '../../organisms/Header';
+import Footer from '../../molecules/Footer';
 
 
 const MyLibraryComponent = {

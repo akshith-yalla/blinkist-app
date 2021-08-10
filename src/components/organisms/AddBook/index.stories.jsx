@@ -1,5 +1,5 @@
 import React from 'react';
-import AddBook from './add-book';
+import AddBook from '.';
 
 const AddBookComponent = {
     title:"ORGANISMS/AddBook",

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+import Header from '.';
 import logo from '../../../assets/images/blinkist_logo.png';
 
 const HeaderComponent = {

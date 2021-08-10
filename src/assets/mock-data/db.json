@@ -7,7 +7,8 @@
       "name": "Bring Your Human to Work",
       "author": "Erica Keswin",
       "readTime": "13-minute read",
-      "readCount": "17.1k"
+      "readCount": "17.1k",
+      "status": "CR"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "name": "Beyond Entrepreneurship 2.0",
       "author": "Jim Collins & Bill Lazier",
       "readTime": "15-minute read",
-      "readCount": ""
+      "readCount": "",
+      "status": "F"
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "name": "Doesn't Hurt to Ask",
       "author": "Trey Gowdy",
       "readTime": "13-minute read",
-      "readCount": "1.9k"
+      "readCount": "1.9k",
+      "status": "F"
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "name": "The Fate of Food",
       "author": "Amanda Little",
       "readTime": "12-minute read",
-      "readCount": ""
+      "readCount": "",
+      "status": "CR"
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "name": "Lives of the Stoic",
       "author": "Ryan Holiday, Stephen Hansel",
       "readTime": "13-minute read",
-      "readCount": ""
+      "readCount": "",
+      "status": "F"
     },
     {
       "id": 6,
@@ -52,7 +57,8 @@
       "name": "Loving Your Business",
       "author": "Debbie King",
       "readTime": "13-minute read",
-      "readCount": ""
+      "readCount": "",
+      "status": "F"
     },
     {
       "id": 7,
@@ -61,7 +67,8 @@
       "name": "Bring Your Human to Work",
       "author": "Erica Keswin",
       "readTime": "15-minute read",
-      "readCount": "1.1k"
+      "readCount": "1.1k",
+      "status": "CR"
     },
     {
       "id": 8,
@@ -70,7 +77,8 @@
       "name": "Bring Your Human to Work",
       "author": "Erica Keswin",
       "readTime": "13-minute read",
-      "readCount": "19.1k"
+      "readCount": "19.1k",
+      "status": "F"
     },
     {
       "id": 9,
@@ -79,7 +87,8 @@
       "name": "Bring Your Human to Work",
       "author": "Erica Keswin",
       "readTime": "12-minute read",
-      "readCount": "11k"
+      "readCount": "11k",
+      "status": "CR"
     },
     {
       "name": "Akshith",
@@ -88,7 +97,40 @@
       "readCount": "12.1 K",
       "readTime": "13",
       "imgSrc": "https://images.blinkist.io/images/books/608bc8bb6cee070008a8f57e/1_1/470.jpg",
-      "id": 10
+      "id": 10,
+      "status": "F"
+    },
+    {
+      "name": "Demo Book2",
+      "author": "Test2",
+      "category": "Science",
+      "readCount": "12.1 K",
+      "readTime": "15",
+      "imgSrc": "https://images.blinkist.io/images/books/608bc8bb6cee070008a8f57e/1_1/470.jpg",
+      "status": "E",
+      "id": 13
+    }
+  ],
+  "explore": [
+    {
+      "name": "Demo Book",
+      "author": "Test",
+      "category": "Science",
+      "readCount": "12.1 K",
+      "readTime": "13",
+      "imgSrc": "https://images.blinkist.io/images/books/608bc8bb6cee070008a8f57e/1_1/470.jpg",
+      "status": "E",
+      "id": 1
+    },
+    {
+      "name": "Demo Book1",
+      "author": "Test1",
+      "category": "Fiction",
+      "readCount": "12.1 K",
+      "readTime": "15",
+      "imgSrc": "https://images.blinkist.io/images/books/608bc8bb6cee070008a8f57e/1_1/470.jpg",
+      "status": "E",
+      "id": 2
     }
   ]
 }

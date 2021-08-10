@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent,CardActions, Typography,Grid,ThemeProvider } from '@material-ui/core';
+import { Card, CardContent,CardActions, Typography,Grid,ThemeProvider, Button } from '@material-ui/core';
 import { AccessTime, PersonOutline, MoreHoriz } from '@material-ui/icons';
 import baseTheme from '../../../themes/theme';
 
@@ -20,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
     borderBottomRightRadius: "unset",
     borderBottomLeftRadius: "unset"
   },
+  bookButton:{
+    padding: theme.spacing(1),
+    cursor: "pointer",
+    backgroundColor:"#2ce080",
+    color: "black"
+  }
 
 }));
 
@@ -27,7 +33,10 @@ const useStyles = makeStyles((theme) => ({
 const BookCardComponent = (props) => {
   
     const styles = useStyles();
-    const { book, bookButton } = props;
+    const { book, btnText, bookStateChange } = props;
+    const changeBookStatus = (f,book)=>{
+        f(book);
+    };
     return (
       <ThemeProvider theme = {baseTheme}>
         <Card className={styles.root} variant="outlined">
@@ -45,14 +54,14 @@ const BookCardComponent = (props) => {
               {book.author}
             </Typography>
             <br/>
-            <Grid container justifyContent="space-between">
-              <Grid item><AccessTime fontSize="small"  style={{marginTop: -2}} />{book.readTime}</Grid>
+            <Grid container justifyContent="space-between" >
+              <Grid item ><AccessTime fontSize="small"  style={{marginTop: -2}} />{book.readTime}</Grid>
               <Grid item><PersonOutline fontSize="small"  style={{marginTop: -2}} />{book.readCount}</Grid>
             </Grid>
 
           </CardContent>
           <Grid container justifyContent="space-between">
-          <Grid item ><CardActions>{bookButton}</CardActions></Grid>
+          <Grid item ><CardActions><Button className={styles.bookButton} onClick={()=>changeBookStatus(bookStateChange, book)} variant="contained">{btnText}</Button></CardActions></Grid>
             <Grid item ><MoreHoriz fontSize="small" style={{margin: "1rem"}} /></Grid>
           </Grid>
 

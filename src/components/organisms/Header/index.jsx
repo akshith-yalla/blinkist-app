@@ -1,15 +1,15 @@
 import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Toolbar, AppBar, Box, Link , Typography, Dialog, DialogActions, DialogContent, Button, IconButton} from '@material-ui/core';
-import IconButtonComponent from '../../atoms/IconButton/icon-button';
+import IconButtonComponent from '../../atoms/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountMenu from '../../organisms/AccountMenu/account-menu';
-import AddBook from '../../organisms/AddBook/add-book';
+import AccountMenu from '../AccountMenu';
+import AddBook from '../AddBook';
 import logo from '../../../assets/images/blinkist_logo.png';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
-import ExploreDropDown from '../../organisms/ExploreDropDown/explore-dropdown';
+import ExploreDropDown from '../ExploreDropDown';
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ExploreDropDown from './explore-dropdown';
+import ExploreDropDown from '.';
 
 const ExploreDropDownComponent = {
     title: "ORGANISMS/Explore Dropdown",

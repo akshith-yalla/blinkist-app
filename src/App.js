@@ -5,14 +5,18 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import AddBook from './components/organisms/AddBook/add-book';
-import MyLibraryPage from './pages/MyLibrary/my-library';
+import AddBook from './components/organisms/AddBook';
+import MyLibraryPage from './pages/MyLibrary';
+import ExploreByCategory from './components/organisms/ExploreByCategory';
 
 export default function App() {
   return (
     <Router>
       <div>
         <Switch>
+        <Route path="/explore">
+            <ExploreByCategory />
+          </Route>
           <Route path="/addBook">
             <AddBook />
           </Route>

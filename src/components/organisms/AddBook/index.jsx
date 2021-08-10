@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import { makeStyles, Grid, Card, CardContent, CardHeader,TextField, ThemeProvider } from '@material-ui/core';
-import Button from '../../atoms/Button/button';
+import Button from '../../atoms/Button';
 import API from '../../../api';
-import { body, contentType } from 'min-document';
 
 const useStyles = makeStyles((theme)=>({
     root:{
@@ -17,13 +16,15 @@ const useStyles = makeStyles((theme)=>({
 const AddBook = (props) => {
     const {btnTitle} = props;
     const styles = useStyles();
+    const [btnState, setBtnState]= useState(true);
     const [formData, setFormData] = useState({
             name:"",
             author:"",
             category:"",
             readCount:"",
             readTime:"",
-            imgSrc:""
+            imgSrc:"",
+            status: "E"
     });
     const handleChange =(e)=>{
         const data = formData;
@@ -35,7 +36,7 @@ const AddBook = (props) => {
     const addBook =(e)=>{
         e.preventDefault();
         const bookData = formData;
-        API.post(`/myLibrary`,bookData)
+        API.post(`/explore`,bookData)
         .then(res => {
             console.log(res);
             console.log(res.data, res.status);
@@ -50,7 +51,7 @@ const AddBook = (props) => {
                         <CardHeader title="Add Book"></CardHeader>
                         <CardContent>
                                 <form>
-                                    <TextField className={styles.root}  type="text" fullWidth id="name" placeholder="Enter Book Name" variant="outlined" label="Book Name" onChange={(e)=>handleChange(e)} />
+                                    <TextField className={styles.root} required  type="text" fullWidth id="name" placeholder="Enter Book Name" variant="outlined" label="Book Name" onChange={(e)=>handleChange(e)} />
                                     <TextField className={styles.root}  type="text" fullWidth id="author" placeholder="Enter Author Name" variant="outlined" label="Book Author" onChange={(e)=>handleChange(e)} />
                                     <TextField className={styles.root}  type="text" fullWidth id="category" placeholder="Enter Book Category" variant="outlined" label="Book Category" onChange={(e)=>handleChange(e)} />
                                     <TextField className={styles.root}  type="text" fullWidth id="readCount" placeholder="Enter Read Count" variant="outlined" label="Read Count" onChange={(e)=>handleChange(e)} />

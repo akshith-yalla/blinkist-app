@@ -1,5 +1,5 @@
 import React from 'react';
-import MyLibraryBookEvent from './my-library';
+import MyLibraryBookEvent from '.';
 
 const MyLibraryBookEventComponent = {
     title : "ORGANISMS/MyLibrabryData",
