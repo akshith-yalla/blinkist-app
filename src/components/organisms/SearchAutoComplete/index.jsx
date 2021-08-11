@@ -3,14 +3,15 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 const  SearchAutoComplete = (props) => {
-    const {inputData} = props
+    const {inputData} = props;
+    console.log(inputData, 'searchcomplete');
     return (
         <Autocomplete
           id="combo-box-demo"
           options={inputData}
-          getOptionLabel={(option) => option.title}
+          getOptionLabel={(option) => option.name}
           style={{ width: 300 }}
-          renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+          renderInput={(params) => <TextField {...params} label="Search Books" variant="standard" />}
         />
       );
 };

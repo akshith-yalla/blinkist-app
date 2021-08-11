@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Toolbar, AppBar, Box, Link , Typography, Dialog, DialogActions, DialogContent, Button, IconButton} from '@material-ui/core';
+import { Toolbar, AppBar, Box , Typography, Dialog, DialogActions, DialogContent, Button, IconButton} from '@material-ui/core';
 import IconButtonComponent from '../../atoms/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountMenu from '../AccountMenu';
@@ -10,6 +10,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
 import ExploreDropDown from '../ExploreDropDown';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -114,8 +115,8 @@ const HeaderComponent = (props)=>{
                             </IconButton>
                   </Typography>
                 </Box>
-                <Box className={classes.title}><Typography variant="subtitle2" ><Link color="textPrimary" href="#">My Library</Link></Typography></Box>
-                <Box className={classes.title}><Typography variant="subtitle2" ><Link color="textPrimary" onClick={handleClickOpen} href="#">Add Book</Link></Typography></Box>
+                <Box className={classes.title}><Typography variant="subtitle2" ><Link color="textPrimary" to="/">My Library</Link></Typography></Box>
+                <Box className={classes.title}><Typography variant="subtitle2" ><Link color="textPrimary" onClick={handleClickOpen} to="#">Add Book</Link></Typography></Box>
                 <Box className={classes.account}><AccountMenu /></Box>
                 
             </Toolbar>

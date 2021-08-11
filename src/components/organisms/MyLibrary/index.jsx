@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { makeStyles, Grid, Typography } from '@material-ui/core';
+import { makeStyles, Grid, Typography, Link } from '@material-ui/core';
 import API from '../../../api';
 import BookCard from '../../molecules/BookCard';
 
@@ -99,7 +99,7 @@ const MyLibraryData = (props) => {
                     </div>
                     <Grid container spacing={2}>
                         <Grid container item xs={12} spacing={4}>
-                    {bookCardItems.filter((bookCardItem)=>{
+                    { bookCardItems.length !== 0 && (bookCardItems.filter((bookCardItem)=>{
                         return bookCardItem.status === `${currentTab}`;
                     })?.map(bookCardItem =>(
                             <Grid key={bookCardItem.id} item xs={12} md={4}>
@@ -110,9 +110,10 @@ const MyLibraryData = (props) => {
                                         } bookStateChange={(bookData)=>{onStatusChange(bookData);}}
                                 />
                             </Grid>
-                    ))}
+                    )))}
                     </Grid>
-                    </Grid>                    
+                    </Grid>  
+                    {bookCardItems.length === 0 && (<h3 style={{textAlign:"center"}}>You don't have any books to read</h3>)}                  
                 </>
         );
 };

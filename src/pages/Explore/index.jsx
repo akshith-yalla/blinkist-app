@@ -1,17 +1,22 @@
 import React from 'react';
-import MyLibraryData from '../../components/organisms/MyLibrary';
+import ExploreByCategory from '../../components/organisms/ExploreByCategory';
 import Header from '../../components/organisms/Header';
 import Footer from '../../components/molecules/Footer';
-import Explore from '../../components/templates/Explore';
+import MyLibrary from '../../components/templates/MyLibrary';
+import baseTheme from '../../themes/theme';
+import { ThemeProvider } from '@material-ui/styles';
+
 
 
 const ExplorePage = () => {
     return(
         <>
-            <Explore header={<Header />} mainContent={<MyLibraryData />} footer={<Footer />} />
+        <ThemeProvider theme = {baseTheme}> 
+            <MyLibrary header={<Header />} mainContent={<ExploreByCategory />} footer={<Footer />} />
+        </ThemeProvider>
         </>
     );
 
 };
 
-export default MyLibraryPage;
+export default ExplorePage;

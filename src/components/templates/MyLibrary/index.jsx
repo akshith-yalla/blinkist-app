@@ -1,6 +1,5 @@
 import React from 'react';
-import { makeStyles, Box, Grid, Container, Typography, ThemeProvider, Button } from '@material-ui/core';
-import baseTheme from '../../../themes/theme';
+import { makeStyles, Box, Grid, Container, Typography, Button } from '@material-ui/core';
 import Notification from '../../molecules/Notification';
 
 const useStyles = makeStyles((theme)=>({
@@ -38,25 +37,25 @@ const useStyles = makeStyles((theme)=>({
 const MyLibraryComponent = (props)=>{
     const styles = useStyles();
     const {header, mainContent, footer} = props;
-    return(   
-        <ThemeProvider theme = {baseTheme}> 
-        <Container maxWidth="md">
-            <Box className={styles.header} >
-                {header}
-            </Box>
-            <Typography className={styles.heading} variant="h4">My Library</Typography>
-            <br/>
-            <Notification />
-            <br/>
-            {mainContent}
-            <br />
-            <Grid container justifyContent="center"><Button variant="outlined" className={styles.btn}>Load More</Button></Grid>
-            <br />
-        </Container>
+    return(  
+        <> 
+            <Container maxWidth="md">
+                <Box className={styles.header} >
+                    {header}
+                </Box>
+                <Typography className={styles.heading} variant="h4">My Library</Typography>
+                <br/>
+                <Notification />
+                <br/>
+                {mainContent}
+                <br />
+                <Grid container justifyContent="center"><Button variant="outlined" className={styles.btn}>Load More</Button></Grid>
+                <br />
+            </Container>
             <div>
                 {footer}
             </div>
-        </ThemeProvider>
+        </>
     );
 
 };

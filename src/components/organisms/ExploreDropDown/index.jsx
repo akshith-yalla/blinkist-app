@@ -1,6 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Box, Typography} from '@material-ui/core';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles((theme)=>({
   explore_container:{
@@ -35,7 +41,6 @@ const useStyles = makeStyles((theme)=>({
 const ExploreDropDownComponent = () => {
   const classes = useStyles();
   return (
-      <>
           <Box className={classes.explore_container}>
                 <div className={classes.explore_header}>
                   <Typography color="primary" className={classes.explore_titles} variant="subtitle1">Explore by category</Typography>
@@ -44,7 +49,7 @@ const ExploreDropDownComponent = () => {
                 </div>
                 <div className={classes.explore_content_main}>
                   <div className={classes.explore_content}>
-                    <Typography className={classes.explore_content_titles}  color="textPrimary" variant="body1">Entrepreneurship</Typography>
+                    <Typography  color="textPrimary" className={classes.explore_content_titles} variant="body1"><Link to='/explore'  >Entrepreneurship</Link></Typography>
                     <Typography className={classes.explore_content_titles}  color="textPrimary" variant="body1">Science </Typography>
                     <Typography className={classes.explore_content_titles}  color="textPrimary" variant="body1">Economics</Typography>
                     <Typography className={classes.explore_content_titles}  color="textPrimary" variant="body1">Corporate Culture</Typography>
@@ -78,7 +83,6 @@ const ExploreDropDownComponent = () => {
                   </div>
                 </div>
               </Box>
-      </>
   );
 };
 

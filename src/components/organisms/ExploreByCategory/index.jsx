@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { makeStyles, Grid, Typography } from '@material-ui/core';
+import { makeStyles, Grid, TextField } from '@material-ui/core';
 import API from '../../../api';
 import BookCard from '../../molecules/BookCard';
+import  {useRouteMatch} from 'react-router-dom';
+import SearchAutoComplete from '../SearchAutoComplete';
 
 const useStyles = makeStyles((theme)=>({
 
@@ -24,26 +26,41 @@ function ExploreByCategoryComponent() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [bookState, setBookState] = useState(false);
     const [bookCardItems, setBookCardData] = useState([]);
-    const [currentTab, setCurrentTab] = useState('CR');
-    const onchangeTab = () =>{
-        currentTab === 'CR'? setCurrentTab('F'):setCurrentTab('CR');
-    };
+
+    const { path, url } = useRouteMatch();
+
     const onStatusChange = (bookData) => {
         const data = bookData;
-        const book_id = data.id;
-        const bookStatus = data.status;
-        bookStatus === 'CR'?data['status']='F':data['status']='CR';
+        updateExplore(bookData);
+        data['status']='CR';
         setBookState(!bookState);
-        API.put(`/myLibrary/${book_id}`, data)
+        API.post(`/myLibrary`, data)
         .then(res => res.data)
         .then((result)=>{
-            console.log(result,'Book status updated successfully');
+            console.log(result,'Book added to my library successfully');
         },
         (error)=>{
             console.log(error, "Error while updating");
         }
          );
-};
+    };
+
+    const updateExplore = (bookData) =>{
+        const exploreData = bookData;
+        const book_id = exploreData.id;
+        const bookStatus = exploreData.status;
+        bookStatus === 'E'?exploreData['status'] = "":exploreData['status']='Add to Library';
+        API.put(`/explore/${book_id}`, exploreData)
+        .then(res => res.data)
+        .then((result)=>{
+            console.log(result,'Updated book status successfully');
+        },
+        (error)=>{
+            console.log(error, "Error while updating");
+        }
+        );
+
+    };
 
     useEffect(() => {
         API.get('/explore')
@@ -62,24 +79,28 @@ function ExploreByCategoryComponent() {
 
     
         return (
-                <>
-                    <Grid container spacing={2}>
-                        <Grid container item xs={12} spacing={4}>
-                    {bookCardItems.filter((bookCardItem)=>{
-                        return bookCardItem.status === `${currentTab}`;
-                    })?.map(bookCardItem =>(
-                            <Grid key={bookCardItem.id} item xs={12} md={4}>
-                                <BookCard  book={bookCardItem} btnText={
-                                            bookCardItem.status === "E"
-                                            ? "Add to Library"
-                                            : ""
-                                        } bookStateChange={(bookData)=>{onStatusChange(bookData);}}
-                                />
-                            </Grid>
-                    ))}
+            <>
+            <div className={styles.middleConatiner}>
+                <div className={styles.libraryTabs}>
+                    <SearchAutoComplete inputData={bookCardItems} />
+                </div>
+            </div>
+            <br />
+            <Grid container spacing={2}>
+                <Grid container item xs={12} spacing={4}>
+            {bookCardItems?.map(bookCardItem =>(
+                    <Grid key={bookCardItem.id} item xs={12} md={4}>
+                        <BookCard  book={bookCardItem} btnText={
+                                    bookCardItem.status === "E"
+                                    ? "Add to Library"
+                                    : ""
+                                } bookStateChange={(bookData)=>{onStatusChange(bookData);}}
+                        />
                     </Grid>
-                    </Grid>                    
-                </>
+            ))}
+            </Grid>
+            </Grid>                    
+        </>
         );
 };
 

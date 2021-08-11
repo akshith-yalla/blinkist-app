@@ -61,7 +61,7 @@ const BookCardComponent = (props) => {
 
           </CardContent>
           <Grid container justifyContent="space-between">
-          <Grid item ><CardActions><Button className={styles.bookButton} onClick={()=>changeBookStatus(bookStateChange, book)} variant="contained">{btnText}</Button></CardActions></Grid>
+          <Grid item ><CardActions>{btnText.length > 0 && (<Button className={styles.bookButton} onClick={()=>changeBookStatus(bookStateChange, book)} variant="contained">{btnText}</Button>)}</CardActions></Grid>
             <Grid item ><MoreHoriz fontSize="small" style={{margin: "1rem"}} /></Grid>
           </Grid>
 
